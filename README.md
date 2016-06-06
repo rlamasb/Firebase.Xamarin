@@ -3,7 +3,7 @@ Light weight wrapper for Firebase Realtime Database REST API.
 ## Installation
 ```csharp
 // Install release version
-Install-Package Install-Package Firebase.Xamarin
+Install-Package Firebase.Xamarin
 
 ```
 
