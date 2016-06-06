@@ -73,3 +73,5 @@ private void OnItemMessage(YourObject message)
 
   
 ```
+## Thanks
+Special thanks to [bezysoftware](https://github.com/bezysoftware) for the original [firebase-database-dotnet] (https://github.com/step-up-labs/firebase-database-dotnet) code that is the core for this Xamarin adaptation.
