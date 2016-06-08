@@ -64,7 +64,7 @@ _token.Where(r=> r.Object.id > 10) // optional
       .Subscribe(OnItemMessage);
 ....
 
-private void OnItemMessage(YourObject message)
+private void OnItemMessage(FirebaseEvent<YourObject> message)
 {
   	Dispatcher.RequestMainThreadAction(() =>
     {
