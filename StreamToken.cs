@@ -26,8 +26,8 @@
 			return this;
 		}
 
-		public void Subscribe(Action<T> onDataAdded)
-			=> _observableDisposable = _observable.Subscribe(d => onDataAdded(d.Object));
+		public void Subscribe(Action<T, string> onDataAdded)
+			=> _observableDisposable = _observable.Subscribe(d => onDataAdded(d.Object, d.Key));
 
 		public void Dispose()
 		{

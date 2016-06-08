@@ -27,3 +27,5 @@ Y:\Developer\Firebase.Xamarin\bin\Debug\System.Reactive.PlatformServices.xml
 Y:\Developer\Firebase.Xamarin\obj\Debug\Firebase.Xamarin.csprojResolveAssemblyReference.cache
 Y:\Developer\Firebase.Xamarin\obj\Debug\Firebase.Xamarin.dll
 Y:\Developer\Firebase.Xamarin\obj\Debug\Firebase.Xamarin.pdb
+Y:\Developer\Firebase.Xamarin\obj\Debug\Firebase.Xamarin.dll.mdb
+Y:\Developer\Firebase.Xamarin\bin\Debug\Firebase.Xamarin.dll.mdb
