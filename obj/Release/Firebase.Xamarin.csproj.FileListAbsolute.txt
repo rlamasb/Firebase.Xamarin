@@ -1,0 +1,14 @@
+C:\Bountye\Bountye-Droid\Bountye.Droid\Firebase.Xamarin\bin\Release\Firebase.Xamarin.dll
+C:\Bountye\Bountye-Droid\Bountye.Droid\Firebase.Xamarin\bin\Release\Firebase.Xamarin.pdb
+C:\Bountye\Bountye-Droid\Bountye.Droid\Firebase.Xamarin\bin\Release\Newtonsoft.Json.dll
+C:\Bountye\Bountye-Droid\Bountye.Droid\Firebase.Xamarin\bin\Release\System.Reactive.Core.dll
+C:\Bountye\Bountye-Droid\Bountye.Droid\Firebase.Xamarin\bin\Release\System.Reactive.Interfaces.dll
+C:\Bountye\Bountye-Droid\Bountye.Droid\Firebase.Xamarin\bin\Release\System.Reactive.Linq.dll
+C:\Bountye\Bountye-Droid\Bountye.Droid\Firebase.Xamarin\bin\Release\System.Reactive.PlatformServices.dll
+C:\Bountye\Bountye-Droid\Bountye.Droid\Firebase.Xamarin\bin\Release\Newtonsoft.Json.xml
+C:\Bountye\Bountye-Droid\Bountye.Droid\Firebase.Xamarin\bin\Release\System.Reactive.Core.xml
+C:\Bountye\Bountye-Droid\Bountye.Droid\Firebase.Xamarin\bin\Release\System.Reactive.Interfaces.xml
+C:\Bountye\Bountye-Droid\Bountye.Droid\Firebase.Xamarin\bin\Release\System.Reactive.Linq.xml
+C:\Bountye\Bountye-Droid\Bountye.Droid\Firebase.Xamarin\bin\Release\System.Reactive.PlatformServices.xml
+C:\Bountye\Bountye-Droid\Bountye.Droid\Firebase.Xamarin\obj\Release\Firebase.Xamarin.dll
+C:\Bountye\Bountye-Droid\Bountye.Droid\Firebase.Xamarin\obj\Release\Firebase.Xamarin.pdb
