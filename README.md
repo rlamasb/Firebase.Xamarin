@@ -60,15 +60,23 @@ var item = await firebase
 ```csharp
 FirebaseClient<YourObject> _client = new FirebaseClient<YourObject>("https://yourdatabase.firebaseio.com/", "");
 StreamToken<YourObject> _token = _client.GetStreamToken("yourentity");
-_token.Subscribe(OnItemMessage);
+_token.Where(r=> r.Object.id > 10) // optional
+      .Subscribe(OnItemMessage);
 ....
 
 private void OnItemMessage(YourObject message)
 {
-	Dispatcher.RequestMainThreadAction(() =>
-	{
-		//Do something with message;
-	});
+  	Dispatcher.RequestMainThreadAction(() =>
+    {
+        if (report.EventType == FirebaseEventType.InsertOrUpdate)
+        {
+            //Do Somethig
+        }
+        else
+        {
+            //Do Something else
+        }
+    });
 }
 
   
