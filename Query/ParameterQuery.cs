@@ -8,12 +8,20 @@ namespace Firebase.Xamarin.Query
         private readonly string parameter;
         private readonly string separator;
 
-        protected ParameterQuery(FirebaseQuery parent, string parameter)
-            : base(parent)
-        {
-            this.parameter = parameter;
-            this.separator = (this.Parent is ChildQuery) ? "?" : "&";
-        }
+		protected ParameterQuery(FirebaseQuery parent, string parameter)
+			: base(parent)
+		{
+			this.parameter = parameter;
+
+			if (parent.BuildUrl().IndexOf('?') > 0)
+			{
+				this.separator = "&";
+			}
+			else
+			{ 
+				this.separator = (this.Parent is ChildQuery) ? "?" : "&";
+			}
+		}
 
         protected override string BuildUrlSegment(FirebaseQuery child)
         {

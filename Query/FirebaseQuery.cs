@@ -74,7 +74,6 @@ namespace Firebase.Xamarin.Query
             {
                 url = this.Parent.BuildUrl(this) + url;
             }
-
             return url;
         }
     }

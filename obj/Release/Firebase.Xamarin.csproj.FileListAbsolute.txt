@@ -26,13 +26,3 @@ Y:\Developer\Firebase.Xamarin\bin\Release\System.Reactive.Linq.xml
 Y:\Developer\Firebase.Xamarin\bin\Release\System.Reactive.PlatformServices.xml
 Y:\Developer\Firebase.Xamarin\obj\Release\Firebase.Xamarin.dll
 Y:\Developer\Firebase.Xamarin\obj\Release\Firebase.Xamarin.pdb
-Y:\Developer\Firebase.Xamarin\obj\Release\Firebase.Xamarin.dll.mdb
-Y:\Developer\Firebase.Xamarin\bin\Release\Firebase.Xamarin.dll.mdb
-Y:\Developer\Firebase.Xamarin\obj\Release\Firebase.Xamarin.dll.mdb
-Y:\Developer\Firebase.Xamarin\bin\Release\Firebase.Xamarin.dll.mdb
-Y:\Developer\Firebase.Xamarin\obj\Release\Firebase.Xamarin.dll.mdb
-Y:\Developer\Firebase.Xamarin\bin\Release\Firebase.Xamarin.dll.mdb
-Y:\Developer\Firebase.Xamarin\obj\Release\Firebase.Xamarin.dll.mdb
-Y:\Developer\Firebase.Xamarin\bin\Release\Firebase.Xamarin.dll.mdb
-Y:\Developer\Firebase.Xamarin\obj\Release\Firebase.Xamarin.dll.mdb
-Y:\Developer\Firebase.Xamarin\bin\Release\Firebase.Xamarin.dll.mdb
