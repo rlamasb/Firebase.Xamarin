@@ -5,7 +5,7 @@
 	/// <summary>
 	/// Firebase client which acts as an entry point to the online database.
 	/// </summary>
-	public class FirebaseClient<T>
+	public class FirebaseClient
 	{
 		private readonly string _baseUrl;
 		private readonly string _secret;
@@ -36,6 +36,6 @@
 		/// </summary>
 		/// <returns>A token from which you can subscribe to events.</returns>
 		/// <param name="path">Path.</param>
-		public StreamToken<T> GetStreamToken(string path) => new StreamToken<T>(Child(path).AsObservable<T>());
+		//public StreamToken<T> GetStreamToken(string path) => new StreamToken<T>(Child(path).AsObservable<T>());
 	}
 }

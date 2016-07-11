@@ -9,7 +9,7 @@
 		private IDisposable _observableDisposable;
 		private IObservable<FirebaseEvent<T>> _observable;
 
-		internal StreamToken(IObservable<FirebaseEvent<T>> observable)
+		public StreamToken(IObservable<FirebaseEvent<T>> observable)
 		{
 			_observable = observable;
 		}
