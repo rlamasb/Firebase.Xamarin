@@ -82,10 +82,10 @@ private void OnItemMessage(FirebaseEvent<YourObject> message)
 
 ## firebase.google.com Authentication
 
-You will need a firebase.google.com API Key for Authentication. The easiset way to find this is to click on 'Add Firebase to your web app' in the Overview section of firebase.google.com. The site will generate a JavaScript snippet that contains the ```apiKey``` variable.
+You will need a firebase.google.com API Key for Authentication. The easiset way to find this is to click on 'Add Firebase to your web app' in the Overview section of your firebase.google.com console. The site will generate a JavaScript snippet that contains the ```apiKey``` variable.
 ```csharp
 // Email/Password Auth
-var authProvider = new FirebaseAuthProvider(new FirebaseConfig("<Firebase.io API Key>"));
+var authProvider = new FirebaseAuthProvider(new FirebaseConfig("<google.firebase.com API Key>"));
 
 var auth = await authProvider.CreateUserWithEmailAndPasswordAsync("email@email.com", "password");
 
@@ -94,7 +94,7 @@ System.Diagnostics.Debug.WriteLine(auth.FirebaseToken);
 
 
 // Facebook Auth
-var authProvider = new FirebaseAuthProvider(new FirebaseConfig("<Firebase.io API Key>"));
+var authProvider = new FirebaseAuthProvider(new FirebaseConfig("<google.firebase.com>"));
 var facebookAccessToken = "<login with facebook and get oauth access token>";
 
 var auth = await authProvider.SignInWithOAuthAsync(FirebaseAuthType.Facebook, facebookAccessToken);
