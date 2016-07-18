@@ -79,6 +79,38 @@ private void OnItemMessage(FirebaseEvent<YourObject> message)
     });
 }
 ```
+
+## firebase.google.com Authentication
+
+You will need a firebase.google.com API Key for Authentication. The easiset way to find this is to click on 'Add Firebase to your web app' in the Overview section of firebase.google.com. The site will generate a JavaScript snippet that contains the ```apiKey``` variable.
+```csharp
+// Email/Password Auth
+var authProvider = new FirebaseAuthProvider(new FirebaseConfig("<Firebase.io API Key>"));
+
+var auth = await authProvider.CreateUserWithEmailAndPasswordAsync("email@email.com", "password");
+
+// The auth Object will contain auth.User and the Authentication Token from the request
+System.Diagnostics.Debug.WriteLine(auth.FirebaseToken);
+
+
+// Facebook Auth
+var authProvider = new FirebaseAuthProvider(new FirebaseConfig("<Firebase.io API Key>"));
+var facebookAccessToken = "<login with facebook and get oauth access token>";
+
+var auth = await authProvider.SignInWithOAuthAsync(FirebaseAuthType.Facebook, facebookAccessToken);
+
+var firebase = new FirebaseClient("https://dinosaur-facts.firebaseio.com/");
+var dinos = await firebase
+  .Child("dinosaurs")
+  .WithAuth(auth.FirebaseToken)
+  .OnceAsync<Dinosaur>();
+
+foreach (var dino in dinos)
+{
+  System.Diagnostics.Debug.WriteLine($"{dino.Key} is {dino.Object.Height}m high.");
+}
+```
+
 ## Generating Tokens
 
 To generate tokens, you'll need your Firebase Secret which you can find by entering your Firebase
@@ -138,4 +170,4 @@ string token = tokenGenerator.CreateToken(authPayload, new Firebase.TokenOptions
   
 ```
 ## Thanks
-Special thanks to [bezysoftware](https://github.com/bezysoftware) for the original [firebase-database-dotnet] (https://github.com/step-up-labs/firebase-database-dotnet) code that is the core for this Xamarin adaptation. Also thanks to  [mikelehen](https://github.com/mikelehen) for the original [Firebase Token Generator - .NET] (https://github.com/firebase/firebase-token-generator-dotNet)
+Special thanks to [bezysoftware](https://github.com/bezysoftware) for the original [firebase-database-dotnet] (https://github.com/step-up-labs/firebase-database-dotnet) and [firebase-authentication-dotnet] (https://github.com/step-up-labs/firebase-authentication-dotnet) code that is the core for this Xamarin adaptation. Also thanks to [mikelehen](https://github.com/mikelehen) for the original [Firebase Token Generator - .NET] (https://github.com/firebase/firebase-token-generator-dotNet)
