@@ -56,6 +56,13 @@
     <Compile Include="StreamToken.cs" />
     <Compile Include="TokenGenerator.cs" />
     <Compile Include="TokenOptions.cs" />
+    <Compile Include="Auth\FirebaseAuth.cs" />
+    <Compile Include="Auth\FirebaseAuthLink.cs" />
+    <Compile Include="Auth\FirebaseAuthProvider.cs" />
+    <Compile Include="Auth\FirebaseAuthType.cs" />
+    <Compile Include="Auth\FirebaseConfig.cs" />
+    <Compile Include="Auth\IFirebaseAuthProvider.cs" />
+    <Compile Include="Auth\User.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -78,11 +85,8 @@
       <HintPath>packages\Rx-PlatformServices.2.2.5\lib\portable-net45+winrt45+wp8+wpa81\System.Reactive.PlatformServices.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="crypto">
-      <HintPath>..\Bountye.Droid\packages\Portable.BouncyCastle.1.8.0\lib\portable-net45+win8+wpa81+MonoTouch10+MonoAndroid10+xamarinmac20+xamarinios10\crypto.dll</HintPath>
-    </Reference>
     <Reference Include="JWT">
-      <HintPath>..\Bountye.Droid\packages\Portable.JWT.1.0.5\lib\portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\JWT.dll</HintPath>
+      <HintPath>..\test-mixar\packages\Portable.JWT.1.0.5\lib\portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\JWT.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
