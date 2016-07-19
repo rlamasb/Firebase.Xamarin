@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 
 
-namespace Firebase.Xamarin
+namespace Firebase.Xamarin.Token
 {
 	public class TokenGenerator
 	{

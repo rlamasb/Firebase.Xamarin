@@ -1,4 +1,4 @@
-﻿namespace Firebase.Xamarin
+﻿namespace Firebase.Xamarin.Auth
 {
     /// <summary>
     /// The type of authentication. 

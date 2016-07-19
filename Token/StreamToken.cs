@@ -1,8 +1,8 @@
-﻿namespace Firebase.Xamarin
+﻿namespace Firebase.Xamarin.Token
 {
 	using System;
 	using System.Reactive.Linq;
-	using Streaming;
+	using Firebase.Xamarin.Database.Streaming;
 
 	public class StreamToken<T> : IDisposable
 	{

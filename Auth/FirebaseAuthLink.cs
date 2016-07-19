@@ -1,4 +1,4 @@
-﻿namespace Firebase.Xamarin
+﻿namespace Firebase.Xamarin.Auth
 {
     using System.Threading.Tasks;
 
