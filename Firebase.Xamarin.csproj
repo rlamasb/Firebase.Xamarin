@@ -34,28 +34,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="FirebaseClient.cs" />
-    <Compile Include="FirebaseKeyGenerator.cs" />
-    <Compile Include="FirebaseObject.cs" />
-    <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="Http\HttpClientExtensions.cs" />
-    <Compile Include="Http\PostResult.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Query\ChildQuery.cs" />
-    <Compile Include="Query\FilterQuery.cs" />
-    <Compile Include="Query\FirebaseQuery.cs" />
-    <Compile Include="Query\IFirebaseQuery.cs" />
-    <Compile Include="Query\OrderQuery.cs" />
-    <Compile Include="Query\ParameterQuery.cs" />
-    <Compile Include="Query\QueryExtensions.cs" />
-    <Compile Include="Streaming\FirebaseCache.cs" />
-    <Compile Include="Streaming\FirebaseEvent.cs" />
-    <Compile Include="Streaming\FirebaseEventType.cs" />
-    <Compile Include="Streaming\FirebaseServerEventType.cs" />
-    <Compile Include="Streaming\FirebaseSubscription.cs" />
-    <Compile Include="StreamToken.cs" />
-    <Compile Include="TokenGenerator.cs" />
-    <Compile Include="TokenOptions.cs" />
     <Compile Include="Auth\FirebaseAuth.cs" />
     <Compile Include="Auth\FirebaseAuthLink.cs" />
     <Compile Include="Auth\FirebaseAuthProvider.cs" />
@@ -63,6 +41,36 @@
     <Compile Include="Auth\FirebaseConfig.cs" />
     <Compile Include="Auth\IFirebaseAuthProvider.cs" />
     <Compile Include="Auth\User.cs" />
+    <Compile Include="Database\FirebaseClient.cs" />
+    <Compile Include="Database\FirebaseKeyGenerator.cs" />
+    <Compile Include="Database\FirebaseObject.cs" />
+    <Compile Include="Database\GlobalSuppressions.cs" />
+    <Compile Include="Database\ObservableExtensions.cs" />
+    <Compile Include="Database\Http\HttpClientExtensions.cs" />
+    <Compile Include="Database\Http\PostResult.cs" />
+    <Compile Include="Database\Offline\ExceptionEventArgs.cs" />
+    <Compile Include="Database\Offline\OfflineCacheAdapter.cs" />
+    <Compile Include="Database\Offline\OfflineEntry.cs" />
+    <Compile Include="Database\Offline\RealtimeDatabase.cs" />
+    <Compile Include="Database\Offline\SyncOptions.cs" />
+    <Compile Include="Database\Properties\AssemblyInfo.cs" />
+    <Compile Include="Database\Query\AuthQuery.cs" />
+    <Compile Include="Database\Query\ChildQuery.cs" />
+    <Compile Include="Database\Query\FilterQuery.cs" />
+    <Compile Include="Database\Query\FirebaseQuery.cs" />
+    <Compile Include="Database\Query\IFirebaseQuery.cs" />
+    <Compile Include="Database\Query\OrderQuery.cs" />
+    <Compile Include="Database\Query\ParameterQuery.cs" />
+    <Compile Include="Database\Query\QueryExtensions.cs" />
+    <Compile Include="Database\Query\QueryFactoryExtensions.cs" />
+    <Compile Include="Database\Streaming\FirebaseCache.cs" />
+    <Compile Include="Database\Streaming\FirebaseEvent.cs" />
+    <Compile Include="Database\Streaming\FirebaseEventType.cs" />
+    <Compile Include="Database\Streaming\FirebaseServerEventType.cs" />
+    <Compile Include="Database\Streaming\FirebaseSubscription.cs" />
+    <Compile Include="Token\StreamToken.cs" />
+    <Compile Include="Token\TokenGenerator.cs" />
+    <Compile Include="Token\TokenOptions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -91,6 +99,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Token\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

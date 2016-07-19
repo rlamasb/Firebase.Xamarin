@@ -17,12 +17,15 @@ Install-Package Firebase.Xamarin
 
 ## Usage
 
+Depending on your [database rules](https://firebase.google.com/docs/database/security/) you may need to first Authenticate with your Auth Provider. Instructions for Authentication are towards the bottom.
+
 ### Querying
 
 ```csharp
 var firebase = new FirebaseClient("https://yourdatabase.firebaseio.com/");
 var items = await firebase
   .Child("yourentity")
+  //.WithAuth("<Authentication Token>") // <-- Add Auth token if required. Auth instructions further down in readme.
   .OrderByKey()
   .LimitToFirst(2)
   .OnceAsync<YourObject>();
@@ -41,6 +44,7 @@ var firebase = new FirebaseClient("https://yourdatabase.firebaseio.com/");
 // add new item to list of data 
 var item = await firebase
   .Child("yourentity")
+  //.WithAuth("<Authentication Token>") // <-- Add Auth token if required. Auth instructions further down in readme.
   .PostAsync(new YourObject());
   
 // note that there is another overload for the PostAsync method which delegates the new key generation to the client
@@ -51,6 +55,7 @@ Console.WriteLine($"Key for the new item: {item.Key}");
 var item = await firebase
   .Child("yourentity")
   .Child("Ricardo")
+  //.WithAuth("<Authentication Token>") // <-- Add Auth token if required. Auth instructions further down in readme.
   .PutAsync(new YourObject());
 
 ```
@@ -58,29 +63,20 @@ var item = await firebase
 ### Realtime streaming
 
 ```csharp
-FirebaseClient<YourObject> _client = new FirebaseClient<YourObject>("https://yourdatabase.firebaseio.com/", "");
-StreamToken<YourObject> _token = _client.GetStreamToken("yourentity");
-_token.Where(r=> r.Object.id > 10) // optional
-      .Subscribe(OnItemMessage);
-....
-
-private void OnItemMessage(FirebaseEvent<YourObject> message)
-{
-  	Dispatcher.RequestMainThreadAction(() =>
-    {
-        if (report.EventType == FirebaseEventType.InsertOrUpdate)
-        {
-            //Do Somethig
-        }
-        else
-        {
-            //Do Something else
-        }
-    });
-}
+var firebase = new FirebaseClient("https://dinosaur-facts.firebaseio.com/");
+var observable = firebase
+  .Child("dinosaurs")
+  .AsObservable<Dinosaur>()
+  .Subscribe(d => Console.WriteLine(d.Key));
+  
 ```
 
-## firebase.google.com Authentication
+```AsObservable<T>``` methods returns an ```IObservable<T>``` which you can take advantage of using [Reactive Extensions](https://github.com/Reactive-Extensions/Rx.NET)
+
+
+## Authentication
+
+### firebase.google.com Auth
 
 You will need a firebase.google.com API Key for Authentication. The easiset way to find this is to click on 'Add Firebase to your web app' in the Overview section of your firebase.google.com console. The site will generate a JavaScript snippet that contains the ```apiKey``` variable.
 ```csharp
@@ -94,15 +90,16 @@ System.Diagnostics.Debug.WriteLine(auth.FirebaseToken);
 
 
 // Facebook Auth
-var authProvider = new FirebaseAuthProvider(new FirebaseConfig("<google.firebase.com>"));
+var authProvider = new FirebaseAuthProvider(new FirebaseConfig("<google.firebase.com API Key>"));
 var facebookAccessToken = "<login with facebook and get oauth access token>";
 
 var auth = await authProvider.SignInWithOAuthAsync(FirebaseAuthType.Facebook, facebookAccessToken);
 
+// Using the Auth token to make requests.. (see more on requests below)
 var firebase = new FirebaseClient("https://dinosaur-facts.firebaseio.com/");
 var dinos = await firebase
   .Child("dinosaurs")
-  .WithAuth(auth.FirebaseToken)
+  .WithAuth(auth.FirebaseToken) // <-- Note the use of the Firebase Auth Token
   .OnceAsync<Dinosaur>();
 
 foreach (var dino in dinos)
@@ -111,7 +108,10 @@ foreach (var dino in dinos)
 }
 ```
 
-## Generating Tokens
+
+### Custom Auth
+
+#### Generating Tokens
 
 To generate tokens, you'll need your Firebase Secret which you can find by entering your Firebase
 URL into a browser and clicking the "Secrets" tab on the left-hand navigation menu.
@@ -138,7 +138,7 @@ must contain a "uid" key, which must be a string of less than 256 characters. Th
 generated token must be less than 1024 characters in total.
 
 
-## Token Options
+#### Token Options
 
 A second `options` argument can be passed to `CreateToken()` to modify how Firebase treats the
 token. Available options are:

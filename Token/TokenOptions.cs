@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Firebase.Xamarin
+namespace Firebase.Xamarin.Token
 {
 	public class TokenOptions
 	{
