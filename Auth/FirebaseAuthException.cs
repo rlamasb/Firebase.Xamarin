@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace MrQuickie
+namespace Firebase.Xamarin.Auth
 {
 	/*
 	 * Sign In Exceptions 
@@ -29,15 +29,6 @@ namespace MrQuickie
 		/// <param name="message">This is the description of the exception</param>
 		/// <param name="innerException">Inner exception</param>
 		public FirebaseIncorrectPasswordException(String message, Exception innerException) : base(message, innerException)
-		{
-		}
-
-		/// <summary>
-		/// Argument constructor with serialization support
-		/// </summary>
-		/// <param name="info">Instance of SerializationInfo</param>
-		/// <param name="context">Instance of StreamingContext</param>
-		protected FirebaseIncorrectPasswordException(SerializationInfo info, StreamingContext context) : base(info, context)
 		{
 		}
 	}
@@ -68,16 +59,6 @@ namespace MrQuickie
 		/// <param name="innerException">Inner exception</param>
 
 		public FirebaseInvalidEmailException(String message, Exception innerException) : base(message, innerException)
-		{
-		}
-
-		/// <summary>
-		/// Argument constructor with serialization support
-		/// </summary>
-		/// <param name="info">Instance of SerializationInfo</param>
-		/// <param name="context">Instance of StreamingContext</param>
-
-		protected FirebaseInvalidEmailException(SerializationInfo info, StreamingContext context) : base(info, context)
 		{
 		}
 	}
@@ -113,16 +94,6 @@ namespace MrQuickie
 		public FirebaseUsedEmailException(String message, Exception innerException) : base(message, innerException)
 		{
 		}
-
-		/// <summary>
-		/// Argument constructor with serialization support
-		/// </summary>
-		/// <param name="info">Instance of SerializationInfo</param>
-		/// <param name="context">Instance of StreamingContext</param>
-
-		protected FirebaseUsedEmailException(SerializationInfo info, StreamingContext context) : base(info, context)
-		{
-		}
 	}
 
 	public class FirebaseWeakPasswordException : Exception
@@ -151,16 +122,6 @@ namespace MrQuickie
 		/// <param name="innerException">Inner exception</param>
 
 		public FirebaseWeakPasswordException(String message, Exception innerException) : base(message, innerException)
-		{
-		}
-
-		/// <summary>
-		/// Argument constructor with serialization support
-		/// </summary>
-		/// <param name="info">Instance of SerializationInfo</param>
-		/// <param name="context">Instance of StreamingContext</param>
-
-		protected FirebaseWeakPasswordException(SerializationInfo info, StreamingContext context) : base(info, context)
 		{
 		}
 	}
