@@ -142,7 +142,7 @@
 			if (!response.IsSuccessStatusCode)
 			{
 				var jsonReturn = JObject.Parse(responseData);
-				var message = jsonReturn["error"]["message"];
+				var message = (string)jsonReturn["error"]["message"];
 
 				// Login
 				// Email address not found in database
