@@ -1,129 +1,51 @@
-﻿using System;
-using System.Runtime.Serialization;
-
-namespace Firebase.Xamarin.Auth
+﻿namespace Firebase.Xamarin.Auth
 {
-	/*
-	 * Sign In Exceptions 
-	 */
-	public class FirebaseIncorrectPasswordException : Exception
-	{
-		/// <summary>
-		/// Default constructor
-		/// </summary>
-		public FirebaseIncorrectPasswordException() : base()
-		{
-		}
+    using System;
 
-		/// <summary>
-		/// Argument constructor
-		/// </summary>
-		/// <param name="message">This is the description of the exception</param>
-		public FirebaseIncorrectPasswordException(String message) : base(message)
-		{
-		}
+    public class FirebaseAuthException : Exception
+    {
+        public FirebaseAuthException(string requestUrl, string requestData, string responseData, Exception innerException, AuthErrorReason reason = AuthErrorReason.Undefined)
+            : base(GenerateExceptionMessage(requestUrl, requestData, responseData, reason), innerException)
+        {
+            this.RequestUrl = requestUrl;
+            this.RequestData = requestData;
+            this.ResponseData = responseData;
+            this.Reason = reason;
+        }
 
-		/// <summary>
-		/// Argument constructor with inner exception
-		/// </summary>
-		/// <param name="message">This is the description of the exception</param>
-		/// <param name="innerException">Inner exception</param>
-		public FirebaseIncorrectPasswordException(String message, Exception innerException) : base(message, innerException)
-		{
-		}
-	}
+        /// <summary>
+        /// Post data passed to the authentication service.
+        /// </summary>
+        public string RequestData
+        {
+            get;
+        }
 
-	public class FirebaseInvalidEmailException : Exception
-	{
-		/// <summary>
-		/// Default constructor
-		/// </summary>
+        public string RequestUrl
+        {
+            get;
+        }
 
-		public FirebaseInvalidEmailException() : base()
-		{
-		}
+        /// <summary>
+        /// Response from the authentication service.
+        /// </summary>
+        public string ResponseData
+        {
+            get;
+        }
 
-		/// <summary>
-		/// Argument constructor
-		/// </summary>
-		/// <param name="message">This is the description of the exception</param>
+        /// <summary>
+        /// indicates why a login failed. If not resolved, defaults to
+        /// <see cref="AuthErrorReason.Undefined"/>.
+        /// </summary>
+        public AuthErrorReason Reason
+        {
+            get;
+        }
 
-		public FirebaseInvalidEmailException(String message) : base(message)
-		{
-		}
-
-		/// <summary>
-		/// Argument constructor with inner exception
-		/// </summary>
-		/// <param name="message">This is the description of the exception</param>
-		/// <param name="innerException">Inner exception</param>
-
-		public FirebaseInvalidEmailException(String message, Exception innerException) : base(message, innerException)
-		{
-		}
-	}
-
-	/*
-	 * Create User Exceptions
-	 */
-	public class FirebaseUsedEmailException : Exception
-	{
-		/// <summary>
-		/// Default constructor
-		/// </summary>
-
-		public FirebaseUsedEmailException() : base()
-		{
-		}
-
-		/// <summary>
-		/// Argument constructor
-		/// </summary>
-		/// <param name="message">This is the description of the exception</param>
-
-		public FirebaseUsedEmailException(String message) : base(message)
-		{
-		}
-
-		/// <summary>
-		/// Argument constructor with inner exception
-		/// </summary>
-		/// <param name="message">This is the description of the exception</param>
-		/// <param name="innerException">Inner exception</param>
-
-		public FirebaseUsedEmailException(String message, Exception innerException) : base(message, innerException)
-		{
-		}
-	}
-
-	public class FirebaseWeakPasswordException : Exception
-	{
-		/// <summary>
-		/// Default constructor
-		/// </summary>
-
-		public FirebaseWeakPasswordException() : base()
-		{
-		}
-
-		/// <summary>
-		/// Argument constructor
-		/// </summary>
-		/// <param name="message">This is the description of the exception</param>
-
-		public FirebaseWeakPasswordException(String message) : base(message)
-		{
-		}
-
-		/// <summary>
-		/// Argument constructor with inner exception
-		/// </summary>
-		/// <param name="message">This is the description of the exception</param>
-		/// <param name="innerException">Inner exception</param>
-
-		public FirebaseWeakPasswordException(String message, Exception innerException) : base(message, innerException)
-		{
-		}
-	}
+        private static string GenerateExceptionMessage(string requestUrl, string requestData, string responseData, AuthErrorReason errorReason)
+        {
+            return $"Exception occured while authenticating.\nUrl: {requestUrl}\nRequest Data: {requestData}\nResponse: {responseData}\nReason: {errorReason}";
+        }
+    }
 }
-
